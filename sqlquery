@@ -1,0 +1,29 @@
+SELECT caas.Nama, tahapan.nama_tahapan, nilai FROM `nilai` JOIN caas ON caas.id_caas = nilai.id_nilai JOIN tahapan ON tahapan.id_tahapan = nilai.id_nilai
+
+SELECT caas.Nama, nilai.nilai, tahapan.nama_tahapan FROM `nilai` JOIN caas ON caas.id_caas = nilai.id_caas JOIN tahapan ON tahapan.id_tahapan = nilai.id_tahapan
+
+
+SELECT caas.Nama as `Nama Caas`,
+MAX(CASE WHEN nilai.id_tahapan = "1" THEN nilai.nilai END) "Administrasi",
+MAX(CASE WHEN nilai.id_tahapan = "2" THEN nilai.nilai END) "CBT Test",
+MAX(CASE WHEN nilai.id_tahapan = "3" THEN nilai.nilai END) "Hackerrank",
+MAX(CASE WHEN nilai.id_tahapan = "4" THEN nilai.nilai END) "Microteaching",
+MAX(CASE WHEN nilai.id_tahapan = "5" THEN nilai.nilai END) "Interview",
+SUM( nilai.nilai) as Total
+FROM caas, nilai, tahapan
+WHERE nilai.id_tahapan = tahapan.id_tahapan and nilai.id_caas= caas.id_caas
+GROUP BY nilai.id_tahapan, nilai.id_caas
+ORDER BY nilai.id_tahapan, nilai.id_caas ASC
+
+
+SELECT DISTINCT caas.Nama as `Nama Caas`,
+SUM(CASE WHEN nilai.id_tahapan = 1 THEN nilai.nilai  END) "Administrasi",
+SUM(CASE WHEN nilai.id_tahapan = 2 THEN nilai.nilai  END) "CBT Test",
+SUM(CASE WHEN nilai.id_tahapan = 3 THEN nilai.nilai  END) "Hackerrank",
+SUM(CASE WHEN nilai.id_tahapan = 4 THEN nilai.nilai  END) "Microteaching",
+SUM(CASE WHEN nilai.id_tahapan = 5 THEN nilai.nilai  END) "Interview",
+SUM( nilai.nilai) as Total
+FROM caas, nilai, tahapan
+WHERE nilai.id_tahapan = tahapan.id_tahapan and nilai.id_caas= caas.id_caas
+GROUP BY nilai.id_caas
+ORDER BY nilai.id_tahapan, nilai.id_caas ASC
