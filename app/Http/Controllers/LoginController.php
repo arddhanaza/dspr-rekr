@@ -46,6 +46,8 @@ class LoginController extends Controller
             } else {
                 return redirect('/');
             }
+        } else {
+            return redirect('/');
         }
     }
 

@@ -37,7 +37,9 @@
                         <td>{{$caas->Interview}}</td>
                         <td>{{$caas->Total}}</td>
                         <td>
-                            <a href="{{route('asisten_edit_nilai',$caas->id_caas)}}" class="btn btn-primary">Edit</a>
+                            <a href="{{route('add_nilai_microteaching',$caas->id_caas)}}"
+                               class="btn btn-secondary mb-3">Add Nilai Microteaching</a>
+                            <a href="{{route('asisten_edit_nilai',$caas->id_caas)}}" class="btn btn-outline-secondary">Edit</a>
                         </td>
                     </tr>
                 @endforeach

@@ -31,6 +31,8 @@ Route::group(['middleware' => 'loggedin'], function () {
         Route::get('/asisten/nilai/', [AsistenController::class, 'lihatNilai'])->name('asisten_lihat_nilai');
         Route::get('/asisten/nilai/caas/edit/{id}', [AsistenController::class, 'edit'])->name('asisten_edit_nilai');
         Route::post('/asisten/nilai/caas/edit/{id}/update', [AsistenController::class, 'update'])->name('asisten_update_nilai');
+        Route::get('/asisten/nilai/microteaching/caas/add/{id}', [AsistenController::class, 'add_nilai_microteaching'])->name('add_nilai_microteaching');
+        Route::post('/asisten/nilai/microteaching/caas/add/{id}/save', [AsistenController::class, 'save_nilai_microteaching'])->name('save_nilai_microteaching');
     });
 });
 

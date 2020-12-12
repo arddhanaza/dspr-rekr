@@ -49,7 +49,7 @@
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Update</button>
-                    <a href="{{route('asisten_lihat_nilai',$nilai->id_caas)}}"
+                    <a href="{{route('asisten_lihat_nilai')}}"
                        class="btn btn-outline-secondary">Cancel</a>
                 </div>
             </form>
