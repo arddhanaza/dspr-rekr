@@ -9,17 +9,17 @@
     </div>
     <div class="card">
         <div class="card-body">
-            <table class="table mt-3 datTable">
+            <table class="table mt-3 datTable table-responsive">
                 <thead>
                 <tr>
                     <th>#</th>
                     <th>Nama Calon Asisten</th>
                     <th>Kode Asisten Penilai</th>
-                    <th>Administasi</th>
-                    <th>CBT Test</th>
-                    <th>Hackerrank</th>
-                    <th>Microteaching</th>
-                    <th>Interview</th>
+                    <th>Administasi (10%)</th>
+                    <th>CBT Test (15%)</th>
+                    <th>Hackerrank (15%)</th>
+                    <th>Microteaching (30%)</th>
+                    <th>Interview (30%)</th>
                     <th>Total</th>
                     <th>Aksi</th>
                 </tr>
@@ -59,11 +59,11 @@
                     <th>#</th>
                     <th>Nama Calon Asisten</th>
                     <th>Kode Asisten Penilai</th>
-                    <th>Administasi</th>
-                    <th>CBT Test</th>
-                    <th>Hackerrank</th>
-                    <th>Microteaching</th>
-                    <th>Interview</th>
+                    <th>Administasi (10%)</th>
+                    <th>CBT Test (15%)</th>
+                    <th>Hackerrank (15%)</th>
+                    <th>Microteaching (30%)</th>
+                    <th>Interview (30%)</th>
                     <th>Total</th>
                     <th>Aksi</th>
                 </tr>
