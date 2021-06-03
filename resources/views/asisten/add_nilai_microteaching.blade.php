@@ -26,32 +26,27 @@
                 <div class="form-group">
                     <label for="nilai_penguasaan_materi">Penguasaan Materi (1-5)</label>
                     <input type="number" class="form-control" name="nilai_penguasaan_materi"
-                           id="nilai_penguasaan_materi" required min="1" max="5"
-                           placeholder="1 Sangat Kurang - 5 Sangat Baik">
+                           id="nilai_penguasaan_materi" required min="1" max="5" placeholder="1 Sangat Kurang - 5 Sangat Baik">
                 </div>
                 <div class="form-group">
                     <label for="nilai_penguasaan_audiens">Penguasaan Audiens (1-5)</label>
                     <input type="number" class="form-control" name="nilai_penguasaan_audiens"
-                           id="nilai_penguasaan_audiens" required min="1" max="5"
-                           placeholder="1 Sangat Kurang - 5 Sangat Baik">
+                           id="nilai_penguasaan_audiens" required min="1" max="5" placeholder="1 Sangat Kurang - 5 Sangat Baik">
                 </div>
                 <div class="form-group">
                     <label for="nilai_sistematika">Nilai Sistematika /Kemudahan Dipahami (1-5)</label>
                     <input type="number" class="form-control" name="nilai_sistematika"
-                           id="nilai_sistematika" required min="1" max="5"
-                           placeholder="1 Sangat Kurang - 5 Sangat Baik">
+                           id="nilai_sistematika" required min="1" max="5" placeholder="1 Sangat Kurang - 5 Sangat Baik">
                 </div>
                 <div class="form-group">
                     <label for="nilai_kejelasan_suara">Nilai Kejelasan Suara (1-5)</label>
                     <input type="number" class="form-control" name="nilai_kejelasan_suara"
-                           id="nilai_kejelasan_suara" required min="1" max="5"
-                           placeholder="1 Sangat Kurang - 5 Sangat Baik">
+                           id="nilai_kejelasan_suara" required min="1" max="5" placeholder="1 Sangat Kurang - 5 Sangat Baik">
                 </div>
                 <div class="form-group">
-                    <label for="nilai_penggunaan_alat_bantu">Nilai Penggunaan Alat Bantu (1-5)</label>
+                    <label for="nilai_penggunaan_alat_bantu">Nilai Penggunaan Alat Bantu Ajar(1-5)</label>
                     <input type="number" class="form-control" name="nilai_penggunaan_alat_bantu"
-                           id="nilai_penggunaan_alat_bantu" required min="1" max="5"
-                           placeholder="1 Sangat Kurang - 5 Sangat Baik">
+                           id="nilai_penggunaan_alat_bantu" required min="1" max="5" placeholder="1 Sangat Kurang - 5 Sangat Baik">
                 </div>
                 <div class="form-group">
                     <label for="catatan">Catatan (OPTIONAL) </label>

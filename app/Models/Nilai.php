@@ -29,18 +29,17 @@ class Nilai extends Model
             ->join('tahapan', 'tahapan.id_tahapan', '=', 'nilai.id_tahapan')
             ->join('caas', 'caas.id_caas', '=', 'nilai.id_caas')
             ->select('caas.Nama as nama_caas', 'caas.id_caas as id_caas', DB::raw('
-            SUM(CASE WHEN nilai.id_tahapan = 1 THEN (nilai.nilai * 0.1)  END) "Administrasi",
-            SUM(CASE WHEN nilai.id_tahapan = 2 THEN (nilai.nilai * 0.1)  END) "CBTTest",
-            SUM(CASE WHEN nilai.id_tahapan = 3 THEN (nilai.nilai * 0.2)  END) "Hackerrank",
-            SUM(CASE WHEN nilai.id_tahapan = 4 THEN (nilai.nilai * 0.3)  END) "Microteaching",
-            SUM(CASE WHEN nilai.id_tahapan = 5 THEN (nilai.nilai * 0.3)  END) "Interview",
-            SUM(nilai.nilai) as Total
+            SUM(CASE WHEN nilai.id_tahapan = 1 THEN nilai.nilai  END) "Administrasi",
+            SUM(CASE WHEN nilai.id_tahapan = 2 THEN nilai.nilai  END) "CBTTest",
+            SUM(CASE WHEN nilai.id_tahapan = 3 THEN nilai.nilai  END) "Hackerrank",
+            SUM(CASE WHEN nilai.id_tahapan = 4 THEN nilai.nilai  END) "Microteaching",
+            SUM(CASE WHEN nilai.id_tahapan = 5 THEN nilai.nilai  END) "Interview",
+            SUM( nilai.nilai) as Total
             '))
             ->groupBy('caas.Nama')
             ->groupBy('caas.id_caas')
             ->orderBy('nilai.id_tahapan', 'asc')
             ->orderBy('nilai.id_caas', 'asc')
-            ->orderBy('Total','desc')
             ->get();
         for ($row = 0; $row < count($data); $row++) {
             $kodeAsisten = self::showKodeAsisten($data[$row]->id_caas);
@@ -49,14 +48,14 @@ class Nilai extends Model
             $data[$row]->id_praktikum = $praktikum->id_praktikum;
             $caas = self::showNim($data[$row]->id_caas);
             $data[$row]->nim = $caas->nim;
-            $data[$row]->total = self::calculateTotal($data[$row]->id_caas);
+            $data[$row]->Total = self::calculateTotal($data[$row]->id_caas);
         }
         $data = $data->sortByDesc('Total');
         return $data;
     }
 
     public static function calculateTotal($id){
-        $nilaiAdministrasi = DB::table('nilai')
+         $nilaiAdministrasi = DB::table('nilai')
             ->select('nilai')
             ->where('id_caas','=',$id)
             ->where('id_tahapan','=',1)
@@ -82,14 +81,16 @@ class Nilai extends Model
             ->where('id_tahapan','=',5)
             ->first();
         $nilaiAdministrasi->nilai = $nilaiAdministrasi->nilai * 0.1;
-        $nilaiInterview->nilai = $nilaiInterview->nilai * 0.3;
-        $nilaiMicroteaching->nilai = $nilaiMicroteaching->nilai * 0.3;
+        $nilaiInterview->nilai = $nilaiInterview->nilai * 0.20;
+        $nilaiMicroteaching->nilai = $nilaiMicroteaching->nilai * 0.40;
         $nilaiHackerrank->nilai = $nilaiHackerrank->nilai * 0.15;
+        // $nilaiMicroteaching->nilai = $nilaiMicroteaching->nilai * 0.3;
+        // $nilaiHackerrank->nilai = $nilaiHackerrank->nilai * 0.15;
         $nilaiCbt->nilai = $nilaiCbt->nilai * 0.15;
         $total = $nilaiAdministrasi->nilai + $nilaiCbt->nilai + $nilaiHackerrank->nilai + $nilaiInterview->nilai + $nilaiMicroteaching->nilai;
         return $total;
     }
-
+    
     public static function showKodeAsisten($id)
     {
         $asisten = DB::table('nilai')

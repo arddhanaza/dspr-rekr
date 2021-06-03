@@ -11,7 +11,7 @@
     <title>Login</title>
 
 </head>
-<body class="vh-100" style="background-image: url('{{asset('assets/img/bg.jpg')}}')">
+<body class="vh-100" style="background-image: url('{{asset('assets/img/bg.jpg')}}')" >
 <div class="container h-100 align-content-center">
     <div class="row justify-content-center d-flex flex-lg-row-reverse h-100">
         <div class="col-md-6 align-self-center">

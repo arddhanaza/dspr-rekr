@@ -15,7 +15,7 @@
                     <tr>
                         <th>#</th>
                         <th>Nama Calon Asisten</th>
-                        <th>Kode Asisten Penilai</th>
+                        <!--<th>Kode Asisten Penilai</th>-->
                         <th>Administasi</th>
                         <th>CBT Test</th>
                         <th>Hackerrank</th>
@@ -29,7 +29,7 @@
                         <tr>
                             <td>{{$loop->index+1}}</td>
                             <td>{{$caas->nama_caas}}</td>
-                            <td>{{$caas->kode_asisten}}</td>
+                            <!--<td>{{$caas->kode_asisten}}</td>-->
                             <td>{{$caas->Administrasi}}</td>
                             <td>{{$caas->CBTTest}}</td>
                             <td>{{$caas->Hackerrank}}</td>
@@ -54,7 +54,7 @@
                     <tr>
                         <th>#</th>
                         <th>Nama Calon Asisten</th>
-                        <th>Kode Asisten Penilai</th>
+                        <!--<th>Kode Asisten Penilai</th>-->
                         <th>Administasi</th>
                         <th>CBT Test</th>
                         <th>Hackerrank</th>
@@ -68,7 +68,7 @@
                         <tr>
                             <td>{{$loop->index+1}}</td>
                             <td>{{$caas->nama_caas}}</td>
-                            <td>{{$caas->kode_asisten}}</td>
+                            <!--<td>{{$caas->kode_asisten}}</td>-->
                             <td>{{$caas->Administrasi}}</td>
                             <td>{{$caas->CBTTest}}</td>
                             <td>{{$caas->Hackerrank}}</td>
