@@ -15,10 +15,10 @@ class CaasController extends Controller
 
     public function lihatNilaiById($id)
     {
-        if ($id != session(0)->nim) {
+        if ($id != session(0)->nim){
             $nilai_alpro = Nilai::lihatNilaiAlproById(session(0)->nim);
             $nilai_basdat = Nilai::lihatNilaiBasdatById(session(0)->nim);
-        } else {
+        }else{
             $nilai_alpro = Nilai::lihatNilaiAlproById($id);
             $nilai_basdat = Nilai::lihatNilaiBasdatById($id);
         }

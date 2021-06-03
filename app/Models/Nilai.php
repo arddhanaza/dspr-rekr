@@ -48,10 +48,49 @@ class Nilai extends Model
             $data[$row]->id_praktikum = $praktikum->id_praktikum;
             $caas = self::showNim($data[$row]->id_caas);
             $data[$row]->nim = $caas->nim;
+            $data[$row]->Total = self::calculateTotal($data[$row]->id_caas);
         }
+        $data = $data->sortByDesc('Total');
         return $data;
     }
 
+    public static function calculateTotal($id){
+         $nilaiAdministrasi = DB::table('nilai')
+            ->select('nilai')
+            ->where('id_caas','=',$id)
+            ->where('id_tahapan','=',1)
+            ->first();
+        $nilaiCbt = DB::table('nilai')
+            ->select('nilai')
+            ->where('id_caas','=',$id)
+            ->where('id_tahapan','=',2)
+            ->first();
+        $nilaiHackerrank = DB::table('nilai')
+            ->select('nilai')
+            ->where('id_caas','=',$id)
+            ->where('id_tahapan','=',3)
+            ->first();
+        $nilaiMicroteaching = DB::table('nilai')
+            ->select('nilai')
+            ->where('id_caas','=',$id)
+            ->where('id_tahapan','=',4)
+            ->first();
+        $nilaiInterview = DB::table('nilai')
+            ->select('nilai')
+            ->where('id_caas','=',$id)
+            ->where('id_tahapan','=',5)
+            ->first();
+        $nilaiAdministrasi->nilai = $nilaiAdministrasi->nilai * 0.1;
+        $nilaiInterview->nilai = $nilaiInterview->nilai * 0.20;
+        $nilaiMicroteaching->nilai = $nilaiMicroteaching->nilai * 0.40;
+        $nilaiHackerrank->nilai = $nilaiHackerrank->nilai * 0.15;
+        // $nilaiMicroteaching->nilai = $nilaiMicroteaching->nilai * 0.3;
+        // $nilaiHackerrank->nilai = $nilaiHackerrank->nilai * 0.15;
+        $nilaiCbt->nilai = $nilaiCbt->nilai * 0.15;
+        $total = $nilaiAdministrasi->nilai + $nilaiCbt->nilai + $nilaiHackerrank->nilai + $nilaiInterview->nilai + $nilaiMicroteaching->nilai;
+        return $total;
+    }
+    
     public static function showKodeAsisten($id)
     {
         $asisten = DB::table('nilai')

@@ -1,8 +1,17 @@
 $(document).ready(function () {
-    $('.datTable').DataTable(
+    $('#dat1').DataTable(
         {
+            dom: 'Bfrtip',
             buttons: [
-                'copy', 'excel', 'pdf'
+                'excel'
+            ]
+        }
+    );
+    $('#dat2').DataTable(
+        {
+            dom: 'Bfrtip',
+            buttons: [
+                'excel'
             ]
         }
     );

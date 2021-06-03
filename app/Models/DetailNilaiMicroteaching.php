@@ -11,10 +11,9 @@ class DetailNilaiMicroteaching extends Model
     use HasFactory;
     protected $table = 'detail_nilai_microteaching';
 
-    public static function getDataRataan($id)
-    {
+    public static function getDataRataan($id){
         $average = DB::table('detail_nilai_microteaching')
-            ->where('id_caas', '=', $id)
+            ->where('id_caas','=',$id)
             ->average('rataan');
         $average = $average * 20;
         return $average;

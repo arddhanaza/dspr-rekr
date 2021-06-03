@@ -1,7 +1,6 @@
 @extends('template.template')
 @section('title','Nilai')
 @section('nilai','active')
-@include('template.navbar')
 @section('container')
 
     <div class="text-center mt-5">
@@ -9,7 +8,7 @@
     </div>
     <div class="card">
         <div class="card-body">
-            <table class="table mt-3 display nowrap datTable table-responsive js-exportable" id="dat1">
+            <table class="table mt-3 datTable table-responsive">
                 <thead>
                 <tr>
                     <th>#</th>
@@ -21,7 +20,6 @@
                     <th>Microteaching (40%)</th>
                     <th>Interview (20%)</th>
                     <th>Total</th>
-                    <th>Aksi</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -36,10 +34,6 @@
                         <td>{{$caas->Microteaching}}</td>
                         <td>{{$caas->Interview}}</td>
                         <td>{{$caas->Total}}</td>
-                        <td>
-                            <a href="{{route('add_nilai_microteaching',$caas->id_caas)}}" class="btn btn-secondary mb-3">Add Nilai Microteaching</a>
-                            <a href="{{route('asisten_edit_nilai',$caas->id_caas)}}" class="btn btn-primary">Edit</a>
-                        </td>
                     </tr>
                 @endforeach
                 </tbody>
@@ -52,7 +46,7 @@
     </div>
     <div class="card">
         <div class="card-body">
-            <table class="table mt-3 display nowrap datTable table-responsive" id="dat2">
+            <table class="table mt-3 datTable table-responsive">
                 <thead>
                 <tr>
                     <th>#</th>
@@ -64,7 +58,6 @@
                     <th>Microteaching (40%)</th>
                     <th>Interview (20%)</th>
                     <th>Total</th>
-                    <th>Aksi</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -79,10 +72,6 @@
                         <td>{{$caas->Microteaching}}</td>
                         <td>{{$caas->Interview}}</td>
                         <td>{{$caas->Total}}</td>
-                        <td>
-                            <a href="{{route('add_nilai_microteaching',$caas->id_caas)}}" class="btn btn-secondary mb-3 disabled">Add Nilai Microteaching</a>
-                            <a href="{{route('asisten_edit_nilai',$caas->id_caas)}}" class="btn btn-outline-secondary disabled">Edit</a>
-                        </td>
                     </tr>
                 @endforeach
                 </tbody>
