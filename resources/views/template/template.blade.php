@@ -42,6 +42,6 @@
 <script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.print.min.js"></script>
 
 
-<script src="{{asset('assets/dist/js/dataTable.js')}}"></script>
+<script src="{{secure_asset('assets/dist/js/dataTable.js')}}"></script>
 </body>
 </html>
